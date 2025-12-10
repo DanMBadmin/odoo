@@ -1,0 +1,133 @@
+Get document information
+post
+https://api.icount.co.il/api/v3.php/doc/info
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+doctype
+string
+required
+Document type
+
+docnum
+integer
+required
+Document number
+
+get_items
+boolean
+Get items.
+
+Default:
+true
+get_payments
+boolean
+Get payment information.
+
+Default:
+true
+get_custom_info
+boolean
+Get custom fields for document.
+
+Default:
+true
+get_autoinvoices
+boolean
+Get autoinvoices (for doctype=receipt only).
+
+Default:
+false
+get_base_doc_url
+boolean
+Get base document URL.
+
+Default:
+false
+get_doctype_info
+boolean
+Get document type information.
+
+Default:
+false
+get_pdf_link
+boolean
+Get direct link to document PDF.
+
+Default:
+false
+get_paynow_link
+boolean
+Get PayNow (self-payment page) URL for invoice/deal
+
+get_conversion_options
+boolean
+Get list of doctypes this document can be converted to (convert_to)
+
+shortlink
+boolean
+Return shortened URL instead of regular links
+
+max_clicks
+integer
+Shortlink max clicks.
+
+Default:
+30
+expire_days
+integer
+Shortlink expiration days.
+
+Default:
+30
+lang
+string
+Language for pdf link.
+
+Default:
+he
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/doc/info HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 441
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "doctype": "string",
+  "docnum": 0,
+  "get_items": true,
+  "get_payments": true,
+  "get_custom_info": true,
+  "get_autoinvoices": false,
+  "get_base_doc_url": false,
+  "get_doctype_info": false,
+  "get_pdf_link": false,
+  "get_paynow_link": true,
+  "get_conversion_options": true,
+  "shortlink": true,
+  "max_clicks": 30,
+  "expire_days": 30,
+  "lang": "he"
+}

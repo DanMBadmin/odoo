@@ -63,3 +63,13 @@ Content-Length: 173
   "cc_cvv": 123,
   "cc_holder_id": 208915123
 }
+
+response payload fields
+Name	Type	Optional	Default	Description	
+status	bool	No	 	Operation status	
+reason	string	Yes	 	Error code	
+error_description	string	Yes	 	Short error descripion	
+error_details	array(string)	Yes	 	Detailed error messages list	
+success	bool	No	 	True if J5 was successful	
+error	string	No	 	Error message if failed	
+j5_status	iCountJ5Status	No	 	J5 authorization details for later forcing

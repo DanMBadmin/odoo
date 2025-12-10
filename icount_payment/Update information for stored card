@@ -1,0 +1,56 @@
+Update information for stored card
+post
+https://api.icount.co.il/api/v3.php/cc_storage/update
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+cc_token_id
+integer
+required
+Stored Token ID
+
+cc_validity
+number
+Card validity month in either YYYY-MM or MMYY format
+
+cc_holder_id
+number
+Card holder ID number
+
+cc_holder_name
+string
+Card holder name
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/cc_storage/update HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 171
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "cc_token_id": 0,
+  "cc_validity": 0,
+  "cc_holder_id": 0,
+  "cc_holder_name": "string"
+}

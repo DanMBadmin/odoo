@@ -1,0 +1,51 @@
+Add webhook
+post
+https://api.icount.co.il/api/v3.php/webhook/add
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+action
+string
+required
+WebHook action See also: webhook/valid_actions
+
+url
+string
+WebHook URL
+
+method
+string
+WebHook sending method {GET|POST|JSON|XML}.
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/webhook/add HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 143
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "action": "string",
+  "url": "string",
+  "method": "string"
+}

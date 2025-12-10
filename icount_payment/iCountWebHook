@@ -1,0 +1,31 @@
+title: iCountWebHook
+x-stoplight:
+  id: zzoueeax7tslc
+type: object
+properties:
+  webhook_id:
+    type: integer
+    x-stoplight:
+      id: hjw1d35j4hmm7
+    description: WebHook ID
+  action:
+    type: string
+    x-stoplight:
+      id: tgxn3zum3pm9u
+    description: WebHook action
+  url:
+    type: string
+    x-stoplight:
+      id: 13zjqibuho5ap
+    description: WebHook URL
+  method:
+    type: string
+    x-stoplight:
+      id: mm65xil5tzsj0
+    description: 'WebHook sending method {GET|POST|JSON|XML}'
+required:
+  - webhook_id
+  - action
+  - url
+  - method
+description: WebHook information

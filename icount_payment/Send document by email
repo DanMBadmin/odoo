@@ -1,0 +1,142 @@
+Send document by email
+post
+https://api.icount.co.il/api/v3.php/doc/email
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+doctype
+string
+required
+Document type
+
+docnum
+integer
+required
+Document number
+
+orig
+boolean
+Original if true, copy if false.
+
+hidenis
+boolean
+Hide ILS prices from document (only show foreign currency). Applicable only for documents in foreign currency and for languages other then he.
+
+email_lang
+string
+Email language. This also affects the language of the document version. If not passed, current session language (API lang) will be used.
+
+email_to
+string
+Email TO. If empty, assume email_to_client is true
+
+email_to_client
+boolean
+Send email to default client email?
+
+email_to_creator
+boolean
+Send email to document creator?
+
+email_to_me
+boolean
+Send email to authenticated user?
+
+email_cc
+string
+Email CC (Carbon Copy).
+
+email_cc_client
+boolean
+Send CC to default client email?
+
+email_cc_creator
+boolean
+Send CC to document creator?
+
+email_cc_me
+boolean
+Send CC to authenticated user?
+
+email_bcc
+string
+Email BCC (Blind Carbon Copy).
+
+email_bcc_client
+boolean
+Send BCC to default client email?
+
+email_bcc_creator
+boolean
+Send BCC to document creator?
+
+email_bcc_me
+boolean
+Send BCC to authenticated user?
+
+email_subject
+string
+Subject. If not passed, the system will generate one for You.
+
+email_subject_prefix
+string
+Subject prefix. Only applicable when email_subject is not passed.
+
+email_subject_suffix
+string
+Subject suffix. Only applicable when email_subject is not passed.
+
+email_comment
+string
+Additional comment to place in the email body.
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/doc/email HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 619
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "doctype": "string",
+  "docnum": 0,
+  "orig": true,
+  "hidenis": true,
+  "email_lang": "string",
+  "email_to": "string",
+  "email_to_client": true,
+  "email_to_creator": true,
+  "email_to_me": true,
+  "email_cc": "string",
+  "email_cc_client": true,
+  "email_cc_creator": true,
+  "email_cc_me": true,
+  "email_bcc": "string",
+  "email_bcc_client": true,
+  "email_bcc_creator": true,
+  "email_bcc_me": true,
+  "email_subject": "string",
+  "email_subject_prefix": "string",
+  "email_subject_suffix": "string",
+  "email_comment": "string"
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="inline_form">
+        <div t-attf-id="o_payment_icount_inline_{{payment_option_id}}" class="o_payment_icount_form">
+            <div class="mb-2">
+                <label class="form-label" for="icount_holder_{{payment_option_id}}">Cardholder name</label>
+                <input class="form-control" type="text" name="icount_holder_name" t-att-id="'icount_holder_' + str(payment_option_id)" required="true"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label" for="icount_number_{{payment_option_id}}">Card number</label>
+                <input class="form-control" type="text" name="icount_card_number" t-att-id="'icount_number_' + str(payment_option_id)" inputmode="numeric" autocomplete="cc-number" required="true"/>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-2">
+                    <label class="form-label" for="icount_exp_month_{{payment_option_id}}">Expiry month</label>
+                    <input class="form-control" type="text" name="icount_exp_month" t-att-id="'icount_exp_month_' + str(payment_option_id)" placeholder="MM" required="true"/>
+                </div>
+                <div class="col-6 mb-2">
+                    <label class="form-label" for="icount_exp_year_{{payment_option_id}}">Expiry year</label>
+                    <input class="form-control" type="text" name="icount_exp_year" t-att-id="'icount_exp_year_' + str(payment_option_id)" placeholder="YYYY" required="true"/>
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label" for="icount_cvv_{{payment_option_id}}">CVV</label>
+                <input class="form-control" type="password" name="icount_cvv" t-att-id="'icount_cvv_' + str(payment_option_id)" inputmode="numeric" autocomplete="off" required="true"/>
+            </div>
+            <div class="alert alert-info mt-3">
+                <t t-esc="_('By paying the deposit, you authorize secure storage of your card for future charges when the service begins.')"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="token_inline_form">
+        <div class="alert alert-info">
+            <t t-esc="_('Your saved iCount payment method will be used for this charge.')"/>
+        </div>
+    </template>
+
+</odoo>

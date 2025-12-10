@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_provider_form" model="ir.ui.view">
+        <field name="name">iCount Provider Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position="inside">
+                <group invisible="code != 'icount'">
+                    <label string="Credentials are loaded from environment variables (ICOUNT_CID, ICOUNT_USER, ICOUNT_PASS)."/>
+                    <field name="icount_timeout"/>
+                    <field name="icount_document_email"/>
+                </group>
+            </group>
+            <group name="provider_info" position="after">
+                <group string="iCount" invisible="code != 'icount'">
+                    <label string="Payments are captured immediately and tokens are stored for future charges."/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

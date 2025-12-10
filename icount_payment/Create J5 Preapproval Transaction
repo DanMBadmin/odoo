@@ -7,17 +7,9 @@ Body
 
 application/json
 
-cid
+sid
 string
-Company identifier
-
-user
-string
-Username
-
-pass
-string
-Password
+Session ID
 
 cc_number
 number
@@ -65,9 +57,7 @@ Host: api.icount.co.il
 Content-Length: 173
 
 {
-  "cid": "mycompanyid",
-  "user": "myuserid",
-  "pass": "mypassword",
+  "sid": "string",
   "cc_number": 4580458045804580,
   "cc_validity": 231,
   "cc_cvv": 123,

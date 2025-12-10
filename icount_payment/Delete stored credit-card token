@@ -1,0 +1,66 @@
+Delete stored credit-card token
+post
+https://api.icount.co.il/api/v3.php/cc_storage/delete
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+cc_token_id
+integer
+required
+Stored Token ID
+
+client_id
+integer
+Client ID
+
+custom_client_id
+string
+Custom Client ID (from external system)
+
+vat_id
+number
+Client VAT ID
+
+email
+string
+Client email
+
+client_name
+string
+Client name
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/cc_storage/delete HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 213
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "cc_token_id": 0,
+  "client_id": 0,
+  "custom_client_id": "string",
+  "vat_id": 0,
+  "email": "string",
+  "client_name": "string"
+}

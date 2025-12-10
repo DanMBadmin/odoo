@@ -6,17 +6,9 @@ Body
 
 application/json
 
-cid
+sid
 string
-Company identifier
-
-user
-string
-Username
-
-pass
-string
-Password
+Session ID
 
 doctype
 string
@@ -47,9 +39,7 @@ Host: api.icount.co.il
 Content-Length: 161
 
 {
-  "cid": "string",
-  "user": "string",
-  "pass": "string",
+  "sid": "string",
   "doctype": "string",
   "docnum": 0,
   "refund_cc": true,

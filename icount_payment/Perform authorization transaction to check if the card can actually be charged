@@ -1,0 +1,59 @@
+Perform authorization transaction to check if the card can actually be charged
+post
+https://api.icount.co.il/api/v3.php/cc/validate_card_cvv
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+cc_number
+number
+required
+Card number
+
+cc_validity
+number
+required
+Card validity month in either YYYY-MM or MMYY format
+
+cc_cvv
+number
+required
+Card verivication code (CVV/CSC)
+
+cc_holder_id
+number
+required
+Card holder VAT ID
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/cc/validate_card_cvv HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 154
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "cc_number": 0,
+  "cc_validity": 0,
+  "cc_cvv": 0,
+  "cc_holder_id": 0
+}

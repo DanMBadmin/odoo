@@ -1,0 +1,52 @@
+Close document
+post
+https://api.icount.co.il/api/v3.php/doc/close
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+doctype
+string
+required
+Document type
+
+docnum
+integer
+required
+Document number
+
+based_on
+array
+Base documents list
+
+Responses
+200
+OK
+
+request sample htttp
+POST /api/v3.php/doc/close HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 136
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "doctype": "string",
+  "docnum": 0,
+  "based_on": []
+}

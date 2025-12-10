@@ -1,0 +1,57 @@
+Cancel a document
+post
+https://api.icount.co.il/api/v3.php/doc/cancel
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+doctype
+string
+required
+Document type
+
+docnum
+integer
+required
+Document number
+
+refund_cc
+boolean
+Refund credit-card transaction. Will throw an error if there is no cc transaction in document, or if refund failed.
+
+reason
+string
+Cancellation reason
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/doc/cancel HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 161
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "doctype": "string",
+  "docnum": 0,
+  "refund_cc": true,
+  "reason": "string"
+}

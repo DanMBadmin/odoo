@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="payment_provider_icount" model="payment.provider">
+        <field name="name">iCount</field>
+        <field name="code">icount</field>
+        <field name="state">disabled</field>
+        <field name="company_id" eval="False"/>
+        <field name="inline_form_view_id" ref="payment_icount.inline_form"/>
+        <field name="token_inline_form_view_id" ref="payment_icount.token_inline_form"/>
+        <field name="allow_tokenization">True</field>
+        <field name="allow_express_checkout" eval="False"/>
+        <field name="payment_method_ids" eval="[Command.set([ref('payment.payment_method_card')])]"/>
+    </record>
+</odoo>

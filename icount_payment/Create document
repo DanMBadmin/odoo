@@ -6,21 +6,9 @@ Body
 
 application/json
 
-cid
+sid
 string
-Company identifier
-
-Example:
-COMPANY_ID
-user
-string
-Username
-
-Example:
-USERNAME
-pass
-string
-Password
+Session ID
 
 doctype
 string
@@ -524,9 +512,7 @@ Host: api.icount.co.il
 Content-Length: 818
 
 {
-  "cid": "COMPANY_ID",
-  "user": "USERNAME",
-  "pass": "PASSWORD",
+  "sid": "string",
   "doctype": "invrec",
   "vat_id": "123456789",
   "client_name": "Sample Client",

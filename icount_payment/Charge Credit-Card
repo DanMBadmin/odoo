@@ -1,0 +1,153 @@
+Charge Credit-Card
+  post
+  https://api.icount.co.il/api/v3.php/cc/bill
+
+  Request
+    Body
+    
+    application/json
+    cc_cvv
+    sid
+    string
+    Session ID
+    
+    cid
+    string
+    Company identifier
+    
+    user
+    string
+    Username
+    
+    pass
+    string
+    Password
+    
+    client_id
+    integer
+    Client ID
+    
+    custom_client_id
+    string
+    Custom Client ID (from external system)
+    
+    vat_id
+    number<float>
+    Client VAT ID
+    
+    email
+    string
+    Client email
+    
+    client_name
+    string
+    Client name
+    
+    sum
+    number<float>
+    required
+    Amount to charge
+    
+    use_j5_if_available
+    boolean
+    Use preapproved transaction (J5) if available
+    
+    num_of_payments
+    integer
+    Number of installments.
+    
+    first_payment
+    number<float>
+    First payment amount. Applicable only if num_of_payments>1. If not passed - defaults to all installments being equal amount
+    
+    is_credit
+    boolean
+    Is Credit? Applicable only if num_of_payments>1.
+    
+    currency_id
+    integer
+    Currency ID
+    
+    currency_code
+    string
+    Currency Code (3-letter code defined by ISO-4217)
+    
+    currency
+    string
+    Currency identified (either ID, or Code, or name)
+    
+    cc_token_id
+    integer
+    Stored card token ID. -storage
+    
+    cc_number
+    number
+    Credit-Card number
+    
+    cc_type
+    string
+    Credit-Card type
+    
+    cc_cvv
+    number
+    CVV - Card Verification number (3 or 4 digits on the back of the card)
+    
+    cc_validity
+    number
+    Card validity month in either YYYY-MM or MMYY format
+    
+    cc_holder_id
+    number
+    Card holder ID number
+    
+    cc_holder_name
+    string
+    Card holder name
+    
+    payment_description
+    string
+    Payment description
+    
+    is_test
+    boolean
+    Is test transaction? If true, the system will not call credit-card providers and success/failure will depend only on card number validity.
+
+  Responses
+    200
+    OK
+
+  Request sample - http
+    POST /api/v3.php/cc/bill HTTP/1.1
+    Content-Type: application/json
+    Host: api.icount.co.il
+    Content-Length: 640
+    
+    {
+      "sid": "string",
+      "cid": "string",
+      "user": "string",
+      "pass": "string",
+      "client_id": 0,
+      "custom_client_id": "string",
+      "vat_id": -3.402823669209385e+38,
+      "email": "string",
+      "client_name": "string",
+      "sum": -3.402823669209385e+38,
+      "use_j5_if_available": true,
+      "num_of_payments": 0,
+      "first_payment": -3.402823669209385e+38,
+      "is_credit": true,
+      "currency_id": 0,
+      "currency_code": "string",
+      "currency": "string",
+      "cc_token_id": 0,
+      "cc_number": 0,
+      "cc_type": "string",
+      "cc_cvv": 0,
+      "cc_validity": 0,
+      "cc_holder_id": 0,
+      "cc_holder_name": "string",
+      "payment_description": "string",
+      "is_test": true
+    }
+  

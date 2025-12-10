@@ -1,0 +1,92 @@
+Send document link in SMS
+post
+https://api.icount.co.il/api/v3.php/doc/sms
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+doctype
+string
+required
+Document type
+
+docnum
+integer
+required
+Document number
+
+orig
+boolean
+Original if true, copy if false.
+
+hidenis
+boolean
+Hide ILS prices from document (only show foreign currency). Applicable only for documents in foreign currency and for languages other then he.
+
+sms_lang
+string
+SMS language. This also affects the language of the document version. If not passed, current session language (API lang) will be used.
+
+sms_to
+string
+sms TO. If empty, assume sms_to_client is true
+
+sms_to_client
+boolean
+Send sms to default client mobile number?
+
+sms_to_creator
+boolean
+Send sms to document creator?
+
+sms_to_me
+boolean
+Send sms to authenticated user?
+
+sms_prefix
+string
+Prefix for sms text. Will appear before document link. name + document type + number
+
+sms_comment
+string
+Additional comment to place in the sms body.
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/doc/sms HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 324
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "doctype": "string",
+  "docnum": 0,
+  "orig": true,
+  "hidenis": true,
+  "sms_lang": "string",
+  "sms_to": "string",
+  "sms_to_client": true,
+  "sms_to_creator": true,
+  "sms_to_me": true,
+  "sms_prefix": "string",
+  "sms_comment": "string"
+}

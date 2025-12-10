@@ -1,0 +1,97 @@
+Store Credit-Card information
+post
+https://api.icount.co.il/api/v3.php/cc_storage/store
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+client_id
+integer
+Client ID
+
+custom_client_id
+string
+Custom Client ID (from external system)
+
+vat_id
+number
+Client VAT ID
+
+email
+string
+Client email
+
+client_name
+string
+Client name
+
+cc_number
+number
+required
+Credit-Card number
+
+cc_type
+string
+Credit-Card type
+
+cc_cvv
+number
+CVV - Card Verification number (3 or 4 digits on the back of the card)
+
+cc_validity
+number
+required
+Card validity month in either YYYY-MM or MMYY format
+
+cc_holder_id
+number
+Card holder ID number
+
+cc_holder_name
+string
+Card holder name
+
+die_if_exists
+boolean
+Return error if token already exists
+
+Responses
+200
+OK
+
+Request sample - http
+POST /api/v3.php/cc_storage/store HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 345
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "client_id": 0,
+  "custom_client_id": "string",
+  "vat_id": 0,
+  "email": "string",
+  "client_name": "string",
+  "cc_number": 0,
+  "cc_type": "string",
+  "cc_cvv": 0,
+  "cc_validity": 0,
+  "cc_holder_id": 0,
+  "cc_holder_name": "string",
+  "die_if_exists": true
+}

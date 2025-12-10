@@ -1,0 +1,35 @@
+Get list of valid webhook actions
+post
+https://api.icount.co.il/api/v3.php/webhook/valid_actions
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/webhook/valid_actions HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 80
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string"
+}

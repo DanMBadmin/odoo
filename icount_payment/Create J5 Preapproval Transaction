@@ -1,0 +1,75 @@
+Create J5 Preapproval Transaction
+
+post
+https://api.icount.co.il/api/v3.php/cc/j5
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+cc_number
+number
+required
+Credit-Card number
+
+cc_validity
+number
+required
+Card validity month in either YYYY-MM or MMYY format
+
+cc_cvv
+number
+required
+CVV - Card Verification number (3 or 4 digits on the back of the card)
+
+cc_holder_id
+number
+required
+Card holder ID number
+
+sum
+number<float>
+Amount to preapprove..00 ILS
+
+Default:
+5
+currency_id
+integer
+Currency ID
+
+currency_code
+string
+Currency Code (3-letter code)
+
+Responses
+200
+OK
+
+request sample - http
+POST /api/v3.php/cc/j5 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Host: api.icount.co.il
+Content-Length: 173
+
+{
+  "cid": "mycompanyid",
+  "user": "myuserid",
+  "pass": "mypassword",
+  "cc_number": 4580458045804580,
+  "cc_validity": 231,
+  "cc_cvv": 123,
+  "cc_holder_id": 208915123
+}

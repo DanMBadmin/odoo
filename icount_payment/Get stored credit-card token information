@@ -54,3 +54,10 @@ Content-Length: 213
   "client_name": "string",
   "cc_token_id": 0
 }
+
+response payload fields
+Name	Type	Optional	Default	Description	
+status	bool	No	 	Operation status	
+reason	string	Yes	 	Error code	
+error_description	string	Yes	 	Short error descripion	
+error_details	array(string)	Yes	 	Detailed error messages list

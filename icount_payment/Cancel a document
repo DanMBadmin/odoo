@@ -45,3 +45,12 @@ Content-Length: 161
   "refund_cc": true,
   "reason": "string"
 }
+
+response payload fields
+Name	Type	Optional	Default	Description	
+status	bool	No	 	Operation status	
+reason	string	Yes	 	Error code	
+error_description	string	Yes	 	Short error descripion	
+error_details	array(string)	Yes	 	Detailed error messages list	
+cancellation_doctype	string	Yes	 	Cancellation document type	
+cancellation_docnum	int	Yes	 	Cancellation document number

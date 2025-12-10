@@ -1,0 +1,564 @@
+Create document
+post
+https://api.icount.co.il/api/v3.php/doc/create
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+Example:
+COMPANY_ID
+user
+string
+Username
+
+Example:
+USERNAME
+pass
+string
+Password
+
+doctype
+string
+required
+Document type
+
+client_id
+integer
+Client ID
+
+custom_client_id
+string
+Custom Client ID (from external system)
+
+vat_id
+number
+Client VAT ID
+
+email
+string
+Client email
+
+client_name
+string
+Client name
+
+client_address
+string
+Client address
+
+user_id
+integer
+User ID of the employee issuing the document
+
+username
+string
+Username of the employee issuing the document
+
+user_email
+string
+Email address of the employee issuing the document
+
+salesman_id
+integer
+Salesmane ID
+
+doc_date
+string<date>
+Document date
+
+Default:
+today
+paydate
+string<date>
+Last payment date (applicable to doctypes: deal, invoice)
+
+duedate
+string<date>
+Due date (applicable to doctypes: order, offer)
+
+income_type_id
+integer
+Income type ID
+
+income_type_name
+string
+Income type name (only if income_type_id is not passed). The system will lookup income type by name. If it does not exist - it will be created automatically.
+
+expense_type_id
+integer
+expense type ID
+
+currency_id
+integer
+Currency ID
+
+currency_code
+string
+Currency Code (ISO-4217)
+
+rate
+number<float>
+Currency exchange rate
+
+tax_exempt
+boolean
+Tax exempt document?
+
+vat_percent
+number<float>
+VAT percent (if applicable)
+
+totalsum
+number<float>
+Total excluding VAT, before discount and roundup
+
+discount
+number<float>
+Discount
+
+discount_incvat
+number<float>
+Discount (including VAT). If discount_incvat is passed the system will extract VAT and calculate discount automatically
+
+roundup
+number<float>
+Roundup
+
+afterdiscount
+number<float>
+Total excluding VAT, after discount and roundup
+
+totalwithvat
+number<float>
+Total including VAT
+
+paid
+number<float>
+Total amount paid by all payment methods
+
+totalwht
+number<float>
+Total WithHolding Tax amount. If you use multiple deduction types, use deductions parameter instead.
+
+totalpaid
+number<float>
+Total paid including WithHolding Tax
+
+items
+array[iCountDocItem]
+Document items
+
+item_id
+integer
+Document Item ID (automatic, only in existing document information)
+
+inventory_item_id
+string
+Inventory Item ID
+
+sku
+string
+Item SKU
+
+description
+string
+required
+Item description
+
+long_description
+string
+Item long description
+
+currency_id
+integer
+Currency ID
+
+currency_rate
+string
+Rate of conversion from item currency to document currency. For example, if document currency is EUR and the item currency is EUR - this conversion rate will be 1
+
+unitprice
+string
+required
+Item price (excluding VAT)
+
+unitprice_incvat
+string
+Item price (including VAT). If unitprice_incvat is passed, the system will extract VAT and calculate unitprice automatically
+
+unitprice_exempt
+string
+Item price (VAT exempt). NB: Only applicable for Lawyer invoices
+
+tax_exempt
+boolean
+Is item tax exempt?
+
+quantity
+string
+required
+Item quantity. NB: Not applicatble for Lawyer invoices
+
+serial
+string
+Serial number
+
+taxes
+object
+Item tax rates. Keys are tax type IDs (see tax/types). Values are rates (percent)
+
+cash
+iCountCashPayment
+Cash payment
+
+sum
+string
+required
+Cash amount
+
+cheques
+iCountChequePayment
+Cheques
+
+sum
+string
+required
+Cheque amount
+
+date
+string<date>
+required
+Cheque date
+
+bank
+integer
+required
+Cheque bank
+
+branch
+integer
+required
+Cheque branch
+
+account
+integer
+required
+Cheque account
+
+number
+integer
+required
+Cheque number
+
+banktransfer
+iCountBankTransferPayment
+BankTransfer payment
+
+sum
+string
+required
+BankTransfer amount
+
+date
+string<date>
+required
+BankTransfer date
+
+account
+integer
+required
+Bank account ID where BankTransfer was deposited
+
+cc
+iCountCreditCardPayment
+Credit-Card payment
+
+sum
+string
+required
+Credit-Card transaction amount
+
+date
+string<date>
+Transaction date
+
+num_of_payments
+integer
+required
+Number of installments
+
+first_payment
+string
+required
+First payment amount; Applicable only for installments
+
+token_id
+integer
+Credit-Card token ID. Requires cc_storage module
+
+card_number
+integer
+required
+Credit-Card number
+
+card_type
+string
+required
+Credit-Card type
+
+cvv
+integer
+required
+Credit-Card CVV number
+
+exp_year
+integer
+required
+Card Expiration year
+
+exp_month
+integer
+required
+Card Expiration month
+
+holder_id
+integer
+required
+Card Holder ID
+
+holder_name
+string
+required
+Card Holder name
+
+confirmation_code
+string
+required
+Credit-Card transaction confirmation number
+
+paypal
+iCountPayPalPayment
+PayPal payment method
+
+sum
+string
+required
+PayPal transaction amount
+
+date
+string<date>
+required
+PayPal transaction date
+
+txn_id
+string
+required
+PayPal transaction ID
+
+payer_name
+string
+required
+PayPal payer name
+
+barter
+iCountBarterPayment
+Barter payment method
+
+sum
+string
+required
+Barter amount
+
+deductions
+number<float>
+Deductions. The key is deduction_type_id and value is deduction amount. The amounts should be in document currency. deduction_type_id=0 is withholding tax (aka "nicui")
+
+autoinvoice
+boolean
+Enable automatic invoices on cheques.
+
+Default:
+false
+autocheque_detail
+string
+Text for automatic invoices on cheques
+
+autoinvoice_cc
+boolean
+Enable automatic invoices on credit-card installments.
+
+Default:
+false
+autocc_detail
+string
+Text for automatic invoices on credit-card installments.
+
+autocc_income_type_id
+integer
+Income type ID for automatic invoices on credit-card installments.
+
+receipt-only
+autocc_exempt
+boolean
+Tax exempt flag for automatic invoices on credit-card installments.
+
+enable_paynow
+boolean
+Enable self-payment ilink by customer (invoice / deal only)
+
+based_on
+array[iCountBaseDoc]
+Base documents list
+
+doctype
+string
+required
+Base document type
+
+docnum
+integer
+required
+Base document number
+
+doc_url
+string
+Base document URL
+
+doc_title
+string
+Document title
+
+hwc
+string
+Additional comments
+
+append_preset_comments
+boolean
+Append document type preset comments to comments passed in hwc
+
+sanity_string
+string
+Unique sanity string for document. If passed, prevents issuing duplicate documents with same sanity_string value. Max length: 30
+
+doc_lang
+string
+Language of the document version. If not passed, current session language (API lang) will be used.
+
+send_email
+boolean
+Send doc original by email?
+Default:
+false
+
+send_sms
+boolean
+Send doc original by sms?
+Default:
+false
+
+Responses
+200
+OK
+400
+Bad Request
+
+Body
+application/json
+
+status
+boolean
+Default:
+false
+
+reason
+string
+Example:
+doc_exists_based_on_sanity_string
+
+client_id
+integer
+Example:
+2
+
+custom_client_id
+string
+
+doctype
+string
+Example:
+invoice
+
+docnum
+string
+Example:
+1234
+
+doc_url
+string
+Example:
+https://dev.icount.co.il/hash/p_print.php?code=**DOC_ORIG_MAILCODE**
+
+doc_copy_url
+string
+Example:
+https://dev.icount.co.il/hash/p_print.php?code=**DOC_COPY_MAILCODE**
+
+error_description
+string
+Example:
+מסמך עם מחרוזת שפיות שציינת כבר קיים
+
+error_details
+array[object]
+
+request sample http
+POST /api/v3.php/doc/create HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Host: api.icount.co.il
+Content-Length: 818
+
+{
+  "cid": "COMPANY_ID",
+  "user": "USERNAME",
+  "pass": "PASSWORD",
+  "doctype": "invrec",
+  "vat_id": "123456789",
+  "client_name": "Sample Client",
+  "email": "client@example.com",
+  "lang": "en",
+  "currency_code": "USD",
+  "tax_exempt": 1,
+  "items": [
+    {
+      "description": "First item",
+      "unitprice": 50,
+      "quantity": 1
+    },
+    {
+      "description": "Second item",
+      "unitprice": 10,
+      "quantity": 5
+    }
+  ],
+  "cc": {
+    "sum": 100,
+    "card_type": "VISA",
+    "card_number": "0000",
+    "exp_year": 2020,
+    "exp_month": 3,
+    "holder_id": "123456789",
+    "holder_name": "Israel Israeli",
+    "confirmation_code": "875646"
+  },
+  "send_email": 1,
+  "email_to_client": 1,
+  "email_to": "additional_recipient@example.com",
+  "email_cc_me": 1,
+  "email_cc": "copy@example.com"
+}

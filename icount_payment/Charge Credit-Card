@@ -6,10 +6,6 @@ Charge Credit-Card
     Body
     
     application/json
-    cc_cvv
-    sid
-    string
-    Session ID
     
     cid
     string
@@ -123,7 +119,6 @@ Charge Credit-Card
     Content-Length: 640
     
     {
-      "sid": "string",
       "cid": "string",
       "user": "string",
       "pass": "string",

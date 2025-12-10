@@ -1,0 +1,41 @@
+Validate Credit-Card number
+post
+https://api.icount.co.il/api/v3.php/cc/validate_cc_number
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+cc_number
+number
+required
+Credit-Card number
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/cc/validate_cc_number HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 98
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "cc_number": 0
+}

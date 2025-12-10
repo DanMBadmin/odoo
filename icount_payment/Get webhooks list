@@ -1,0 +1,45 @@
+Get webhooks list
+post
+https://api.icount.co.il/api/v3.php/webhook/get_list
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+action
+string
+WebHook action
+
+list_type
+string
+List type (array|object).
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/webhook/get_list HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 127
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "action": "string",
+  "list_type": "string"
+}

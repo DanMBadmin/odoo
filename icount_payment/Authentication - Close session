@@ -1,0 +1,58 @@
+Authentication - Close session
+post
+https://api.icount.co.il/api/v3.php/auth/logout
+Request
+Body
+application/json
+
+status
+boolean
+required
+Operation status
+
+reason
+string
+Error code
+
+error_description
+string
+Short error descripion
+
+error_details
+array[string]
+Detailed error messages list
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/auth/logout HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Host: api.icount.co.il
+Content-Length: 114
+
+{
+  "status": true,
+  "reason": "string",
+  "error_description": "string",
+  "error_details": [
+    "string"
+  ]
+}
+
+response example
+{
+  "api": {
+    "version": 3,
+    "tz": 2,
+    "ts": 1700144931.6464,
+    "lang": "he",
+    "rid": 811112851,
+    "module": "auth",
+    "method": "logout"
+  },
+  "status": true,
+  "reason": "BYE"
+}

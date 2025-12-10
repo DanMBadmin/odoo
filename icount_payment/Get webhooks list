@@ -6,17 +6,9 @@ Body
 
 application/json
 
-cid
+sid
 string
-Company identifier
-
-user
-string
-Username
-
-pass
-string
-Password
+Session ID
 
 action
 string
@@ -37,9 +29,7 @@ Host: api.icount.co.il
 Content-Length: 127
 
 {
-  "cid": "string",
-  "user": "string",
-  "pass": "string",
+  "sid": "string",
   "action": "string",
   "list_type": "string"
 }

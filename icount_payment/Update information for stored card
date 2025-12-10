@@ -44,3 +44,10 @@ Content-Length: 171
   "cc_holder_id": 0,
   "cc_holder_name": "string"
 }
+
+response payload fields
+Name	Type	Optional	Default	Description	
+status	bool	No	 	Operation status	
+reason	string	Yes	 	Error code	
+error_description	string	Yes	 	Short error descripion	
+error_details	array(string)	Yes	 	Detailed error messages list

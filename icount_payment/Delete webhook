@@ -1,0 +1,41 @@
+Delete webhook
+post
+https://api.icount.co.il/api/v3.php/webhook/delete
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+webhook_id
+integer
+required
+WebHook ID
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/webhook/delete HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 99
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "webhook_id": 0
+}

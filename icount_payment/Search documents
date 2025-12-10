@@ -1,0 +1,232 @@
+Search documents
+post
+https://api.icount.co.il/api/v3.php/doc/search
+Request
+Body
+
+application/json
+
+cid
+string
+Company identifier
+
+user
+string
+Username
+
+pass
+string
+Password
+
+client_id
+integer
+Client ID
+
+custom_client_id
+string
+Custom Client ID (from external system)
+
+vat_id
+number
+Client VAT ID
+
+email
+string
+Client email
+
+client_name
+string
+Client name
+
+client_ids
+array[integer]
+Client IDs list (for multi-client search)
+
+custom_client_ids
+array[string]
+Custom Client IDs list (for multi-client search)
+
+user_id
+integer
+User ID of the employee who issued document(s)
+
+username
+string
+Username of the employee who issued document(s)
+
+user_email
+string
+Email address of the employee who issued document(s)
+
+doc_date
+string<date>
+Document date
+
+start_date
+string<date>
+Start date
+
+end_date
+string<date>
+End date
+
+start_ts
+string<date-time>
+Start timestamp
+
+end_ts
+string<date-time>
+End timestamp
+
+paydate
+string<date>
+Last payment date
+
+start_paydate
+string<date>
+Start paydate
+
+end_paydate
+string<date>
+End paydate
+
+duedate
+string<date>
+Due date
+
+start_duedate
+string<date>
+Start duedate
+
+end_duedate
+string<date>
+End duedate
+
+income_type_id
+integer
+Income type ID
+
+status
+integer
+Document status. 0=open, 1=closed, 2=partially closed. Note that querying for open documents will also include results that are partially closed
+
+doctype
+stringinteger
+
+one of: string
+Document type(s) to query
+
+docnum
+stringinteger
+
+one of: string
+Document number(s) to query
+
+cc_last4
+string
+Last 4 digits of crdit-card number
+
+confirmation_code
+string
+Credit-card transaction confirmation code
+
+pp_txn_id
+string
+PayPal transaction ID
+
+max_results
+integer
+Maximum number of results [0-1000].
+
+Default:
+100
+sort_field
+string
+Sorting: Field (dateissued|timeissued|docnum|paydate|client_name).
+
+Default:
+dateissued
+sort_order
+string
+Sorting: Order (ASC|DESC).
+
+Default:
+ASC
+offset
+integer
+Paging: Offset (0+).
+Default:
+0
+
+limit
+integer
+Paging: Limit number of returned results (0+). 0 = no limit.
+Default:
+0
+
+detail_level
+integer
+Level of detail (0-10). 0=doctype+docnum, 1=+date+client_id+currency+total, 2+=client details+detailed totals, 3=+employee+income_type, 4+=totals translated into foreign currency where applicable ... 9=Everything but items+payment details, 10=Everything..
+Default:
+1
+
+get_base_docs
+boolean
+Populate base documents (based_on / based_on_this). If enabled, returns doctype+docnum pairs for each base document.
+Default:
+false
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/doc/search HTTP/1.1
+Content-Type: application/json
+Host: api.icount.co.il
+Content-Length: 989
+
+{
+  "cid": "string",
+  "user": "string",
+  "pass": "string",
+  "client_id": 0,
+  "custom_client_id": "string",
+  "vat_id": 0,
+  "email": "string",
+  "client_name": "string",
+  "client_ids": [
+    0
+  ],
+  "custom_client_ids": [
+    "string"
+  ],
+  "user_id": 0,
+  "username": "string",
+  "user_email": "string",
+  "doc_date": "2019-08-24",
+  "start_date": "2019-08-24",
+  "end_date": "2019-08-24",
+  "start_ts": "2019-08-24T14:15:22Z",
+  "end_ts": "2019-08-24T14:15:22Z",
+  "paydate": "2019-08-24",
+  "start_paydate": "2019-08-24",
+  "end_paydate": "2019-08-24",
+  "duedate": "2019-08-24",
+  "start_duedate": "2019-08-24",
+  "end_duedate": "2019-08-24",
+  "income_type_id": 0,
+  "status": 0,
+  "doctype": "string",
+  "docnum": "string",
+  "cc_last4": "string",
+  "confirmation_code": "string",
+  "pp_txn_id": "string",
+  "max_results": 100,
+  "sort_field": "dateissued",
+  "sort_order": "ASC",
+  "offset": 0,
+  "limit": 0,
+  "detail_level": 1,
+  "get_base_docs": false
+}

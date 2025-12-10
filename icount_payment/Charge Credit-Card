@@ -135,4 +135,16 @@ Charge Credit-Card
       "payment_description": "string",
       "is_test": true
     }
-  
+
+response payload fields
+
+Name	Type	Optional	Default	Description	Notes
+status	bool	No	 	Operation status	
+reason	string	Yes	 	Error code	
+error_description	string	Yes	 	Short error descripion	
+error_details	array(string)	Yes	 	Detailed error messages list	
+success	bool	No	 	True on successful charge	
+confirmation_code	numeric	Yes	 	Confirmation number provided by the Credit-Card processing company	
+cc_type	string	Yes	 	Credit card type
+
+

@@ -1,0 +1,113 @@
+Authentication - Start session
+post
+https://api.icount.co.il/api/v3.php/auth/login
+Request
+Body
+application/json
+
+A session ID remains valid for 20 minutes from the last request—each new request resets the expiration timer.
+
+cid
+string
+required
+Company identifier
+
+user
+string
+required
+Username
+
+pass
+string
+required
+Password
+
+require_module
+string
+Require specific module access
+
+require_priv
+number<float>
+Require privilege level
+
+get_company_info
+boolean
+Get company information
+
+get_settings
+boolean
+Get company settings as well
+
+get_bank_accounts
+boolean
+Get company bank accounts list
+
+list_type
+string
+List type (array|object).
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/auth/login HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Host: api.icount.co.il
+Content-Length: 70
+
+{
+  "cid": "companyname",
+  "user": "username",
+  "pass": "password"
+}
+
+response example
+{
+  "api": {
+    "version": 3,
+    "tz": 2,
+    "ts": 1700143271.9638,
+    "lang": "he",
+    "rid": 838866177,
+    "module": "auth",
+    "method": "login"
+  },
+  "status": true,
+  "reason": "OK",
+  "sid": "655610a1ec910346010129",
+  "cid": "icount",
+  "user": "api",
+  "user_id": 3,
+  "user_info": {
+    "user_id": 3,
+    "username": "api",
+    "email": "api@icount.co.il",
+    "phone": "",
+    "mobile": "",
+    "first_name": "API",
+    "last_name": "iCount",
+    "full_name": "iCount API",
+    "first_name_he": "אייקאונט",
+    "last_name_he": "מערכות",
+    "full_name_he": "אייקאונט מערכות",
+    "first_name_en": "API",
+    "last_name_en": "iCount",
+    "full_name_en": "iCount API",
+    "profile_image": "",
+    "priv_level": 4,
+    "job_type_id": 0,
+    "priv_name": "מנהל",
+    "intercom_user_id": "110645163.3",
+    "intercom_user_hash": "205aff57e7c2667c1f2a69e6de714444d495c58271df126c5672f1835c8e45",
+    "job_type_name": "לא מוגדר / כללי",
+    "job_type_hours": {
+      "100": 32400,
+      "125": 0,
+      "150": 0,
+      "175": 0,
+      "200": 0
+    }
+  }
+}

@@ -1,0 +1,89 @@
+Authentication - Get auth session details
+post
+https://api.icount.co.il/api/v3.php/auth/info
+Request
+Body
+application/json
+
+get_company_info
+boolean
+Get company information
+
+get_settings
+boolean
+Get company settings as well
+
+get_bank_accounts
+boolean
+Get company bank accounts list
+
+list_type
+string
+List type (array|object).
+
+Responses
+200
+OK
+
+request sample http
+POST /api/v3.php/auth/info HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Host: api.icount.co.il
+Content-Length: 108
+
+{
+  "get_company_info": true,
+  "get_settings": true,
+  "get_bank_accounts": true,
+  "list_type": "string"
+}
+
+response sample
+{
+  "api": {
+    "version": 3,
+    "tz": 2,
+    "ts": 17005554725.0502,
+    "lang": "he",
+    "rid": 8384440709,
+    "module": "auth",
+    "method": "info"
+  },
+  "status": true,
+  "reason": "OK",
+  "sid": "654444431062631606",
+  "cid": "icount",
+  "user": "api",
+  "user_id": 3,
+  "user_info": {
+    "user_id": 3,
+    "username": "api",
+    "email": "api@icount.co.il",
+    "phone": "",
+    "mobile": "",
+    "first_name": "iCount",
+    "last_name": "API",
+    "full_name": "iCount API",
+    "first_name_he": "iCount",
+    "last_name_he": "Hebrew",
+    "full_name_he": "iCount Hebrew",
+    "first_name_en": "iCount",
+    "last_name_en": "English",
+    "full_name_en": "iCount English",
+    "profile_image": "",
+    "priv_level": 4,
+    "job_type_id": 0,
+    "priv_name": "מנהל",
+    "intercom_user_id": "110444163.3",
+    "intercom_user_hash": "213f9957e7gagg4g9419435d495c58271df126c5672f1835c14",
+    "job_type_name": "לא מוגדר / כללי",
+    "job_type_hours": {
+      "100": 32400,
+      "125": 0,
+      "150": 0,
+      "175": 0,
+      "200": 0
+    }
+  }
+}

@@ -1,0 +1,43 @@
+title: iCountCompanyBankAccount
+x-stoplight:
+  id: ru58n1yxg3jj7
+type: object
+properties:
+  account_id:
+    type: string
+    x-stoplight:
+      id: 1t1aw7pb15e6a
+    description: Bank account ID
+  bank:
+    type: string
+    x-stoplight:
+      id: mn81hpodkyrw9
+    description: Bank number
+  branch:
+    type: string
+    x-stoplight:
+      id: dd27c0dakg4ub
+    description: Bank ranch number
+  account:
+    type: string
+    x-stoplight:
+      id: m5hqtr7feudbj
+    description: Bank account number
+  currency_id:
+    type: integer
+    x-stoplight:
+      id: vwxr7cr4usfx7
+    description: Currency ID
+  title:
+    type: string
+    x-stoplight:
+      id: b4sxsfib5ng1h
+    description: Bank account title
+required:
+  - account_id
+  - bank
+  - branch
+  - account
+  - currency_id
+  - title
+description: Bank account information

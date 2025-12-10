@@ -1,0 +1,11 @@
+title: iCountUserPrivLevel
+x-stoplight:
+  id: y232n1ngb29ko
+type: object
+properties:
+  id:
+    type: number
+    x-stoplight:
+      id: o93vxne0wkdzw
+    format: float
+description: User privilege level

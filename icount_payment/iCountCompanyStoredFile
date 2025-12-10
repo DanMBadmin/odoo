@@ -1,0 +1,29 @@
+title: iCountCompanyStoredFile
+x-stoplight:
+  id: 1ptqisvua6hpd
+type: object
+properties:
+  type:
+    type: string
+    x-stoplight:
+      id: esybxffd31j21
+    description: 'Document type (eg, books_approval, deduction_approval, etc)'
+  title:
+    type: string
+    x-stoplight:
+      id: f555ctqimhbcs
+    description: Document type title (display name)
+  url:
+    type: string
+    x-stoplight:
+      id: ydp1m18v32dzd
+    description: 'Document URL, if exists'
+  comment:
+    type: string
+    x-stoplight:
+      id: v9oamwkdx0x0y
+    description: Comment
+required:
+  - type
+  - title
+description: Company stored file information

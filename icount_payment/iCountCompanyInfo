@@ -1,0 +1,139 @@
+title: iCountCompanyInfo
+x-stoplight:
+  id: toznl1i77hxut
+type: object
+properties:
+  vat_id:
+    type: string
+    x-stoplight:
+      id: vye9a2jzmj7ck
+    description: Company VAT ID
+  businessName:
+    type: string
+    x-stoplight:
+      id: ffq5sca4ag6n0
+    description: Company name (current language)
+  businessName_he:
+    type: string
+    x-stoplight:
+      id: z71jt4cgeajtb
+    description: Company name (hebrew)
+  businessName_en:
+    type: string
+    x-stoplight:
+      id: rbm09jtuyy8f3
+    description: Company name (english)
+  businessNameSubTitle:
+    type: string
+    x-stoplight:
+      id: z60e7594nbwvh
+    description: Company name sub-title (current language)
+  businessNameSubTitle_he:
+    type: string
+    x-stoplight:
+      id: 1dwmwwk8cyif6
+    description: Company name sub-title (hebrew)
+  businessNameSubTitle_en:
+    type: string
+    x-stoplight:
+      id: a0yz5kopn7xsa
+    description: Company name sub-title (english)
+  businessType:
+    type: integer
+    x-stoplight:
+      id: ksg5xaq7jisp2
+    description: Business type ID
+  businessTypeName:
+    type: string
+    x-stoplight:
+      id: fqhxwk87kiy8l
+    description: Business type name (current language)
+  businessTypeName_he:
+    type: string
+    x-stoplight:
+      id: qkmze56fowjb7
+    description: Business type name (hebrew)
+  businessTypeName_en:
+    type: string
+    x-stoplight:
+      id: s3qapjerb2hl1
+    description: Business type name (english)
+  businessTypeAbbr:
+    type: string
+    x-stoplight:
+      id: 3s8aoki4lzia0
+    description: Business type abbreviation (current language)
+  businessTypeAbbr_he:
+    type: string
+    x-stoplight:
+      id: udjpuzlcqa3ye
+    description: Business type abbreviation (hebrew)
+  businessTypeAbbr_en:
+    type: string
+    x-stoplight:
+      id: 5k7w9twa4d8fk
+    description: Business type abbreviation (english)
+  is_non_profit:
+    type: boolean
+    x-stoplight:
+      id: mziwe15rff1un
+    description: Is non-profit organization?
+  is_tax_exempt:
+    type: boolean
+    x-stoplight:
+      id: fzvbyda290q48
+    description: Is tax-exemmpt company? (small private business)
+  is_vat_exempt:
+    type: boolean
+    x-stoplight:
+      id: qkwtxbjwyrpjr
+    description: Is the company VAT-exempt (non-profit OR small private business)
+  email:
+    type: string
+    x-stoplight:
+      id: lsc330h4l2sej
+    description: Company primary email address
+  phone:
+    type: string
+    x-stoplight:
+      id: yqgxyjxk8ik10
+    description: Company primary phone number
+  fax:
+    type: string
+    x-stoplight:
+      id: 3fy5w8h6mpzmm
+    description: Company primary fax number
+  logo:
+    type: string
+    x-stoplight:
+      id: lh3vdmo776ren
+    description: Company logo URL
+  site:
+    type: string
+    x-stoplight:
+      id: gwg1l0fbbjn2v
+    description: Company website URL
+required:
+  - vat_id
+  - businessName
+  - businessName_he
+  - businessName_en
+  - businessNameSubTitle
+  - businessNameSubTitle_he
+  - businessNameSubTitle_en
+  - businessType
+  - businessTypeName
+  - businessTypeName_he
+  - businessTypeName_en
+  - businessTypeAbbr
+  - businessTypeAbbr_he
+  - businessTypeAbbr_en
+  - is_non_profit
+  - is_tax_exempt
+  - is_vat_exempt
+  - email
+  - phone
+  - fax
+  - logo
+  - site
+description: Company information

@@ -1,0 +1,32 @@
+title: iCountUserPrivLevelInfo
+x-stoplight:
+  id: q6totsagvxy7q
+type: object
+properties:
+  priv_level:
+    $ref: '#/definitions/iCountUserPrivLevel'
+    x-stoplight:
+      id: 50ccm3s3cy6q0
+    description: User privilege level
+  priv_name:
+    type: string
+    x-stoplight:
+      id: vadnmu9bl3t9y
+    description: User privilege level name
+required:
+  - priv_level
+  - priv_name
+description: User privilege level information
+definitions:
+  iCountUserPrivLevel:
+    title: iCountUserPrivLevel
+    x-stoplight:
+      id: y232n1ngb29ko
+    type: object
+    properties:
+      id:
+        type: number
+        x-stoplight:
+          id: o93vxne0wkdzw
+        format: float
+    description: User privilege level

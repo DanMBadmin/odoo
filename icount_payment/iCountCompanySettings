@@ -1,0 +1,115 @@
+title: iCountCompanySettings
+x-stoplight:
+  id: wzalcuk22akvu
+type: object
+properties:
+  cc_enabled:
+    type: boolean
+    x-stoplight:
+      id: wu6hsls0p6aze
+    description: Enable Credit-Card payment support (cc/bill)?
+  cc_require_cvv:
+    type: boolean
+    x-stoplight:
+      id: 0oe9hu84wfyir
+    description: Require CVV field in Credit-Card payment?
+  cc_storage_enabled:
+    type: boolean
+    x-stoplight:
+      id: 43qugndqjea8r
+    description: Is Credit-Card storage enabled?
+  pos_enabled:
+    type: boolean
+    x-stoplight:
+      id: up98cicanbase
+    description: Enable POS (Point-Of-Sale)?
+  iqr_enabled:
+    type: boolean
+    x-stoplight:
+      id: b7p3g48xkg8nb
+    description: Enable iQR data QR code on documents?
+  hk_enabled:
+    type: boolean
+    x-stoplight:
+      id: 0l0wmo0kuh14i
+    description: Enable Standing Orders?
+  expense_enabled:
+    type: boolean
+    x-stoplight:
+      id: yu66d27udmqyo
+    description: Enable Expenses?
+  inventory_enabled:
+    type: boolean
+    x-stoplight:
+      id: yf9fkw76jgcvm
+    description: Enable Inventory management?
+  inventory_min_stock_alerts:
+    type: boolean
+    x-stoplight:
+      id: bunsiqq0csdws
+    description: Enable Inventory min-stock alerts?
+  punchclock_enabled:
+    type: boolean
+    x-stoplight:
+      id: g5sh3bqt1t8a3
+    description: Enable Punchclock?
+  punchclock_require_location:
+    type: boolean
+    x-stoplight:
+      id: h74xo7bouno43
+    description: Punchclock requires location? (do not allow punch-in/punch-out without location)
+  project_management_enabled:
+    type: boolean
+    x-stoplight:
+      id: ndn8rflgticho
+    description: Enable Project management?
+  crm_enabled:
+    type: boolean
+    x-stoplight:
+      id: 8719thizflxx9
+    description: Enable CRM?
+  file_manager_enabled:
+    type: boolean
+    x-stoplight:
+      id: 8dkcx349fi6ec
+    description: Enable File Manager?
+  file_upload_enabled:
+    type: boolean
+    x-stoplight:
+      id: hgwdj4s9mw90w
+    description: Enable File uploads?
+  display_decimals:
+    type: integer
+    x-stoplight:
+      id: 6v1zwokbesmca
+    description: Number of decimals for prices before tax
+  display_decimals_incvat:
+    type: integer
+    x-stoplight:
+      id: yrz0k7zkksygt
+    description: Number of decimals for prices including tax
+  multi_deduction:
+    type: boolean
+    x-stoplight:
+      id: 0keu3twn9jngs
+    description: Enable multiple deduction types?
+  long_description_enabled:
+    type: boolean
+    x-stoplight:
+      id: la1bja6hdr13b
+    description: Enable long_description support in items (document and inventory)
+required:
+  - cc_enabled
+  - hk_enabled
+  - expense_enabled
+  - inventory_enabled
+  - punchclock_enabled
+  - project_management_enabled
+  - crm_enabled
+  - file_manager_enabled
+  - file_upload_enabled
+  - display_decimals
+  - display_decimals_incvat
+  - multi_deduction
+  - long_description_enabled
+description: Company settings

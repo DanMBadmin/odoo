@@ -1,0 +1,68 @@
+title: iCountUserInfo
+x-stoplight:
+  id: u3hg22fxcl7kf
+type: object
+properties:
+  user_id:
+    type: integer
+    x-stoplight:
+      id: jw6vepcmnug3l
+    description: User ID
+  username:
+    type: string
+    x-stoplight:
+      id: 5m93j0819qyet
+    description: Username
+  email:
+    type: string
+    x-stoplight:
+      id: 5sd9hj3k3wxov
+    description: Email address
+  first_name:
+    type: string
+    x-stoplight:
+      id: lrc2pzmcs1cj0
+    description: First name
+  last_name:
+    type: string
+    x-stoplight:
+      id: oms2w6lxuksbd
+    description: Last name
+  full_name:
+    type: string
+    x-stoplight:
+      id: fspwk6g6l9fje
+    description: Full name
+  priv_level:
+    $ref: '#/definitions/iCountUserPrivLevel'
+    x-stoplight:
+      id: awdnlsmxllk6m
+    description: Privilege level
+  priv_name:
+    type: string
+    x-stoplight:
+      id: 2g1sj4t0dqpxk
+    description: Privilege level name
+required:
+  - user_id
+  - username
+  - email
+  - first_name
+  - last_name
+  - full_name
+  - priv_level
+  - priv_name
+description: User information
+definitions:
+  iCountUserPrivLevel:
+    title: iCountUserPrivLevel
+    x-stoplight:
+      id: y232n1ngb29ko
+    type: object
+    properties:
+      id:
+        type: number
+        x-stoplight:
+          id: o93vxne0wkdzw
+        format: float
+    description: User privilege level

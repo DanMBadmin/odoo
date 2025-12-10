@@ -6,9 +6,6 @@ Request
 Body
 
 application/json
-sid
-string
-Session ID
 
 cid
 string
@@ -57,7 +54,6 @@ Host: api.icount.co.il
 Content-Length: 213
 
 {
-  "sid": "string",
   "cid": "string",
   "user": "string",
   "pass": "string",
